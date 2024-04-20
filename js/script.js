@@ -54,6 +54,10 @@ const app = createApp({
         // in todoList
         addItems: function () {
             this.todoList.push({...this.newTodo})
+        },
+        // Ora incremento funzione che rimuove elemento(object) dal nostro array
+        removeItems: function(i) {
+                this.todoList.splice(i, 1);       
         }
     },
 }).mount("#app");

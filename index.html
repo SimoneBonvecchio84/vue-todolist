@@ -25,9 +25,14 @@
           <button type="button" class="btn btn-filled" @click="addItems">Add Task</button>
         </div>
         <div class="tasks">
+          <!-- 
+            Se la lunghezza di array todoList è uguale a 0 
+            Stampa a schermo il testo nel tag al quale ho applicato
+            uno stile testo centrale
+          -->
           <h3 v-if="!todoList.length" style="text-align:center;">Ho completato Tutto</h3>
           <ul class="inner-list">
-           
+            <!-- Lista corrente alla quale applico v-for -->
             <li v-for="curItem, index in todoList" @click="doneItems(index)" :class="
             {'done': curItem.done === true}">
               <span class="circle" :class="{'checked' : curItem.done === true }, {'delete':curItem.done === false}
@@ -35,7 +40,7 @@
               {{ curItem.text }}
               <button @click="removeItems">X</button>
             </li>
-            
+            <!-- /Lista corrente alla quale applico v-for -->
           </ul>
           
         </div>

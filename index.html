@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <title>Toboolist</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <img id="logo" src="img/logo.png" alt="logo boolean" />
+    <span id="logo-text">Toboolist</span>
+  </header>
+  <main>
+    <div id="app">
+      <div class="container">
+        <div class="top">
+          <input type="text" placeholder="es: Fare la spesa..." />
+          <button type="button" class="btn btn-filled">Add Task</button>
+        </div>
+        <div class="tasks">
+          
+          <ul class="inner-list">
+           
+            <li v-for="curItem, index in todoList" @click="doneItems(index)" :class="
+            {'done': curItem.done === false}">
+              <span class="circle" :class="{'checked' : curItem.done === true }, {'delete':curItem.done === false}
+              "></span>
+              {{ curItem.text }}
+            </li>
+            
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -21,15 +21,15 @@
     <div id="app">
       <div class="container">
         <div class="top">
-          <input type="text" placeholder="es: Fare la spesa..." />
-          <button type="button" class="btn btn-filled">Add Task</button>
+          <input v-model="newTodo.text" type="text" placeholder="es: Fare la spesa..." />
+          <button type="button" class="btn btn-filled" @click="addItems">Add Task</button>
         </div>
         <div class="tasks">
           
           <ul class="inner-list">
            
             <li v-for="curItem, index in todoList" @click="doneItems(index)" :class="
-            {'done': curItem.done === false}">
+            {'done': curItem.done === true}">
               <span class="circle" :class="{'checked' : curItem.done === true }, {'delete':curItem.done === false}
               "></span>
               {{ curItem.text }}

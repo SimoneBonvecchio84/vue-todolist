@@ -32,7 +32,7 @@ const app = createApp({
         // funzione che assegna la classe dinamica done al click
         // o la toglie applicando la logica toogle
         doneItems: function(i) {
-            console.log("aaaa")
+          
             // se l elemento corrente todoList(oggetto) ha la classe
             // strettamente uguale a true allora applica false
             // così facendo il il cerchio da verse passa a rosso
@@ -49,8 +49,11 @@ const app = createApp({
         // Ora implemento la funzione per aggiungere un nuovo object
         // alla lista nel dom
         // test con log se funziona il bottone
+        // dando all imput il v-model vado a depositare il suo valore nella chiave
+        // di newTodo e nella funzione pusho grazie all spred operator newTodo(object)
+        // in todoList
         addItems: function () {
-
+            this.todoList.push({...this.newTodo})
         }
     },
 }).mount("#app");

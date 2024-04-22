@@ -64,8 +64,7 @@ const app = createApp({
         },
         // Ora incremento funzione che rimuove elemento(object) dal nostro array
         removeItems: function(i) {
-                this.todoList.splice(i,1);  
-                   
+                this.todoList.splice(i,1);                     
         }
     },
 }).mount("#app");

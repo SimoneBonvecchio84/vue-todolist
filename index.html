@@ -43,7 +43,7 @@
               <span class="circle" :class="{'checked' : curItem.done === true }, {'delete':curItem.done === false}
               "></span>
               {{ curItem.text }}
-              <button @click="removeItems">X</button>
+              <button @click="removeItems(index)">X</button>
             </li>
             <!-- /Lista corrente alla quale applico v-for -->
           </ul>

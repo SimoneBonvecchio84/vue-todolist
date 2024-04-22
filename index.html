@@ -22,7 +22,11 @@
       <div class="container">
         <!-- applichiamo .trim al v-model per evitare che l utente inserisca spazi -->
         <div class="top">
-          <input v-model.trim="newTodo.text" type="text" placeholder="es: Cose da fare..." />
+          <input v-model.trim="newTodo.text" 
+          type="text" 
+          placeholder="es: Cose da fare..." 
+          @keyup.enter="addItems"
+          />
           <button type="button" class="btn btn-filled" @click="addItems">Add Task</button>
         </div>
         <div class="tasks">

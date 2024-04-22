@@ -53,11 +53,19 @@ const app = createApp({
         // di newTodo e nella funzione pusho grazie all spred operator newTodo(object)
         // in todoList
         addItems: function () {
-            this.todoList.push({...this.newTodo})
+            
+            if(this.newTodo.text === ""){
+                alert("Hai inserito un campo vuoto");
+            } else {
+                this.todoList.push({...this.newTodo})
+                this.newTodo.text =""; 
+
+            }
         },
         // Ora incremento funzione che rimuove elemento(object) dal nostro array
         removeItems: function(i) {
-                this.todoList.splice(i, 1);       
+                this.todoList.splice(i,1);  
+                   
         }
     },
 }).mount("#app");
